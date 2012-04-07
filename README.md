@@ -51,7 +51,7 @@ If previous completion is a prefix of current completion, speed hack
 reuses results from previous call so ido does not start from original
 (long) list.
 
-Licence
+License
 =======
 
     Copyright (C) 2012  Daniel Skarda
@@ -68,9 +68,6 @@ Licence
     
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see [http://www.gnu.org/licenses/].
-
-Links
-=====
 
 [ido-mode-el]: https://github.com/orfelyus/ido-mode-el
 [ido-better-flex]: https://github.com/orfelyus/ido-better-flex
