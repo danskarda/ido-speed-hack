@@ -11,6 +11,43 @@ To achieve maximum speed, download following optimisations:
 * [ido-mode-el][] original ido.el 
 * [ido-better-flex][] optional package with better flexible suggestions.
 
+Installation
+------------
+
+To get the best performance, install both ido-speed-hack and ido-mode-el
+(and optionally ido-better-flex).
+
+First get latest version from GitHub:
+
+```shell
+mkdir ~/emacs-hacks
+cd ~/emacs-hacks
+    
+git clone https://github.com/orfelyus/ido-mode-el.git
+git clone https://github.com/orfelyus/ido-speed-hack.git
+
+# and optionally
+git clone https://github.com/orfelyus/ido-better-flex.git
+```
+Then bytecompile all files for better performance:
+
+```shell
+emacs --batch --eval '
+  (progn
+    (byte-compile-file "ido-mode-el/ido.el" t)
+    (byte-compile-file "ido-speed-hack/ido-speed-hack.el" t)
+    (byte-compile-file "ido-better-flex/ido-better-flex.el" t))
+'
+```
+
+And finally load from your ~/.emacs file:
+
+```emacs
+(load "~/emacs-hacks/ido-mode-el/ido.elc")
+(load "~/emacs-hacks/ido-better-flex/ido-better-flex.elc")
+(load "~/emacs-hacks/ido-speed-hack/ido-speed-hack.elc")
+```
+
 Optimisations
 -------------
 ido-speed-hack increases ido performance in several ways:
