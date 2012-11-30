@@ -1,0 +1,4 @@
+*.elc
+*~
+benchmark/link*
+benchmark/bench-data.el
