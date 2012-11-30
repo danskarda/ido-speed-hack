@@ -3,11 +3,11 @@ TL; DR - Managerial summary
 
 - standard Emacs 24.3 provides significant speed improvement over 23.3 in ido flexible matching 
 - original ido-better-flex performance is terible
-- speed-hack introduce two improvements: ido-mode patches and (shared) bitmaps
+- speed-hack introduces two improvements: ido-mode patches and (shared) bitmaps
 
-- ido-mode patches alone improve ido E24 performance
-- bitmap optimization provides significant improvement for better-flex but slows downs E24 a little bit 
-- shared bitmaps significantly improves performance of all methods
+- ido-mode patches alone improves ido E24 performance
+- bitmap optimization provides significant improvement for better-flex but slows down E24 a little bit 
+- shared bitmaps significantly improve performance of all other methods
 
 My setup: 
 ---------
@@ -25,21 +25,21 @@ I simulate interactive ido mode by calls to ido-set-matches. I emulate typing by
 setting ido-text. I start with one character and append one character for each
 iteration (eg. 'a', 'ab', 'abc' etc...)
 
-I use 4 different strings:
+I test 4 different strings:
 
-- "abcdefghijklmnopqrstuvwxyz" - this test favours my batches, because they reuse
+- "abcdefghijklmnopqrstuvwxyz" - this test favours my patches, because they reuse
   results from last matching. 
   
-- "-etaimn" - most common characters in English (and Emacs commands). This completion
-  set will not be reduced much
+- "-etaimn" - most common characters in English (and Emacs commands). The number
+  of completions will not be reduced too much in this test.
   
 - "bcfile" - "real-world" example. Shortcut for byte-compile-file
 
 - "fndgd" - second "real-world" example. Shortcut for find-grep-dired
 
 Ido uses obarray to complete all 4 examples. To have same conditions,
-I saved the completion list to file (39580 symbols). All matches
-started with fresh Emacs and with same list to complete.
+I saved the completion list to file (39580 symbols). All tests
+start with fresh Emacs and with the same list to complete.
 
 Variants
 ---------
