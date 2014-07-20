@@ -1,4 +1,4 @@
-;; ido-speed-hack.el -- speed improvements for Emacs IDO mode
+;;; ido-speed-hack.el --- speed improvements for Emacs IDO mode
 
 ;; Copyright (C) 2012  Daniel Skarda
 ;;
@@ -174,3 +174,4 @@ WORD (using bitmask). Optionally use BIT-CACHE to store bitmasks."
       (ad-set-arg 0 *ido-speed-cache*))))
 
 (provide 'ido-speed-hack)
+;;; ido-speed-hack.el ends here
